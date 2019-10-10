@@ -22,10 +22,11 @@
                 <h2>Generate a Password</h2>
                 <hr>
                 <textarea class="col-md-12 ctextarea-fluid border border-secondary border-dashed mt-1 mb-1 text-center "
-                    readonly id="password" placeholder="Your Secure Password"
+                    readonly id="passwordDisplay" placeholder="Your Secure Password"
                     aria-label="Generated Password"></textarea>
                 <hr>
-                <button class="btn btn-danger border-radius-rounded" id="generate">Generate Password</button>
+                <!-- "onclick" runs the javascript code when the user clicks on the Generate Password Button -->
+                <button onclick="generatePassword()" class="btn btn-danger border-radius-rounded" id="generate">Generate Password</button>
                 <button class="btn btn-secondary" id="copy">
                     Copy to Clipboard
                 </button>
