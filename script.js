@@ -34,6 +34,7 @@ function generatePassword() {
     var specialChar = "!\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
 
     // Set the password and characters variables to empty strings for now.
+    // Source: Thank you to Brandon for suggesting that I add a characters string.
     var password = "";
     var characters = "";
 
@@ -73,26 +74,39 @@ function generatePassword() {
     return password;
 }
 
-// When the user clicks the button, the password element
+// When the user clicks the generate button, the generate function runs.
 document.querySelector("#generate").addEventListener("click", function(){
     password = generatePassword();
-    //    This line changes the placeholder text on the page with the generated password.
-    document.getElementById("passwordDisplay").placeholder = password;
+    //    This line changes the value text on the page with the generated password.
+    document.getElementById("passwordDisplay").value = password;
 });
 
-// Create variables for copy button and password in text area
-// var copyButton = document.querySelector("#copy");
-// var pwdTextArea = document.querySelector("#passwordDisply");
 
-// Copy to clipboard button -- **Not working**
-// function copyToClipboard(){
-//     document.getElementById("passwordDisplay").select();
-//     document.execCommand("copy");
-// }
+// Copy the password to the clipboard
 
-// copyButton.addEventListener("click", function(){
-//     // alert is working
-//     alert("Your password has been copied to the clipboard.");
-// });
+// define the copybutton as a variable
+var copyButton = document.querySelector("#copy");
+
+// function to copy to the clipboard
+function copyToClipboard(){
+    // define a variable for the copied password as the output to the text area
+    var copiedPassword = document.getElementById("passwordDisplay");
+    // select the variable
+    copiedPassword.select();
+    // copy to to teh clipboard
+    // source: https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand
+    document.execCommand("copy");
+    // alert the user that their password has been copied
+    alert("Your password has been copied to the clipboard");
+}
+
+// listen for a click on the copy button, and run the copy to clipboard function when clicked
+copyButton.addEventListener("click", function(){
+    copyToClipboard();
+});
+
+
+
+
 
 
