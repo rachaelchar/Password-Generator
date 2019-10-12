@@ -12,21 +12,21 @@
     <title>Password Generator</title>
 </head>
 
-<body>
+<body class="bg-light-green">
     <div class="row">
-        <div class="container-fluid bg-light col-md-8 col-md-offset-2 col-sm-12 col-xs-12 mt-4">
-            <header class="text-center p-2">
+        <div class="container-fluid border border-success col-md-8 bg-light col-md-offset-2 col-sm-12 col-xs-12 mt-4">
+            <header class="text-center p-2 text-secondary">
                 <h1>Password Generator</h1>
             </header>
-            <div class="container bg-white mb-4">
+            <div class="container bg-white mb-4 text-secondary pb-3">
                 <h2>Generate a Password</h2>
                 <hr>
                 <textarea class="col-md-12 ctextarea-fluid border border-secondary border-dashed mt-1 mb-1 text-center "
                     readonly id="passwordDisplay" placeholder="Your Secure Password"
                     aria-label="Generated Password"></textarea>
                 <hr>
-                <button class="btn btn-danger border-radius-rounded" id="generate">Generate Password</button>
-                <button class="btn btn-secondary" id="copy">
+                <button class="btn btn-success border-radius-rounded" id="generate">Generate Password</button>
+                <button class="btn btn-outline-secondary" id="copy">
                     Copy to Clipboard
                 </button>
             </div>
